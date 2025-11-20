@@ -1,0 +1,4 @@
+files/*
+.env
+ejsConfig.php
+teste.php
