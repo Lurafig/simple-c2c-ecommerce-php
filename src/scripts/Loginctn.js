@@ -19,7 +19,6 @@ register_form.addEventListener(
                 if(!response.err_code){
                     console.log(response);
                     expirationTimer(response.expiration_time * 1000);
-                    sessionStorage.setItem("email", data.email);
                     loading.className = "loading-paused";
                     insert_code_ctn.style.display = "flex";
                     return 0;
