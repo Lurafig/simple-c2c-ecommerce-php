@@ -1,0 +1,29 @@
+Options All -Indexes
+RewriteEngine On
+
+# RewriteCond %{REQUEST_FILENAME} -f [OR]
+# RewriteCond %{REQUEST_FILENAME} -d
+# RewriteRule ^ - [L]
+
+# Ignora arquivos e pastas reais
+# RewriteCond %{REQUEST_URI} .(css|js|png|jpg|jpeg|gif|svg|ico|webp|woff|woff2|ttf|map)$ [NC]
+# RewriteRule ^ - [L]
+
+RewriteRule ^products/([0-9]+)$ product.php?id=$1 [L]
+RewriteRule ^profile/([0-9]+)$ profile.php?id=$1 [L]
+RewriteRule ^([a-zA-Z]+)$ $1.php
+# RewriteRule ^search/(.+)/?$ home.php?search=$1 [L]
+# RewriteRule ^search/(.+)/([0-9]+)$ home.php?search=$1&sortby=$2 [L]
+
+# <Files "teste.php">  
+#   Require all denied
+# </Files>
+
+# RewriteCond %{HTTPS} !=on
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+<Files "config/db_connect.php">
+    <RequireAll>
+        Require local
+    </RequireAll>
+</Files>

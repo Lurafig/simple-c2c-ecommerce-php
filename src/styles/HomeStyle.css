@@ -1,0 +1,223 @@
+@import url("Consts.css");
+
+body {
+    display:grid;
+    margin:0;
+    height: 100%;
+    justify-items: center;
+    align-content: center;
+    background-color: var(--main-background);
+    color:rgb(235, 235, 235);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#post-img-ctn, #post-img-ctn-login {
+    cursor: pointer;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#post-img-ctn:hover, #post-img-ctn-login:hover  {
+    transform: scale(1.05);
+}
+
+#post-img {
+    height: 50px;
+}
+
+#search_options_ctn {
+    display: flex;
+    margin-top: 12px;
+    margin-bottom: 10px;
+    border-radius:5px;
+    align-items: center;
+    justify-content: start;
+    justify-self: center;
+    width: calc(100% - 10px);
+    max-width: 600px;
+    gap: 5px;
+    height: 55px;
+    box-shadow: 0 0 10px 1px var(--shadow-color);
+}
+
+#search-for-titles {
+    display: flex;
+    width: 65%;
+    margin-left: 5px;
+    align-items: center;
+    border: 5px solid var(--background3);
+    border-radius: 10px;
+}
+
+#search_ads {
+    display: flex;
+    padding: 0;
+    border: none;
+    border-radius: 5px 0px 0px 5px;
+    height: 40px;
+    width: 100%;
+    outline: none;
+    color: var(--secondary-color);
+    background-color: var(--background1);
+}
+
+#search_ads::placeholder {
+    opacity: .3;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+#search-button {
+    display: flex;
+    padding: 0;
+    justify-content: center;
+    border: none;
+    align-items: center;
+    cursor: pointer;
+    background-color: var(--background1);
+    border-radius: 0px 5px 5px 0px;
+    height: 40px;
+    width: 40px;
+}
+
+#search-button:hover {
+    background-color: var(--main-background);
+}
+
+#search-button img {
+    height: 25px;
+}
+
+#select-order-ctn {
+    margin-right: 5px;
+    border: 5px solid var(--background3);
+    border-radius: 12px;
+    width:35%;
+}
+
+#select-ads-order {
+    outline: 0;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    /* width: max-content; */
+    border: none;
+    border-radius:8px;
+    color: var(--secondary-color);
+    background-color: var(--background1)
+}
+
+/* input[type="file"] { display: none; } */
+
+#ads-home-ctn {
+    padding:0;
+    display: flex;
+    width: calc(100vw - 20px);
+    max-width: 1600px;
+    height: min-content;
+    min-height: calc(100vh - 237.6px);
+    max-height: fit-content;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 15px;
+    align-content: start;
+    justify-content: center;
+}
+
+.ad-ctn {
+    display:grid;
+    height: max-content;
+    justify-items:center;
+    width: 250px;
+    background-color: var(--background1);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 1px var(--shadow-color);
+    /* position: relative; */
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+.ad-ctn:hover {
+    transform: scale(1.05);
+}
+
+.image-uploaded {
+    /* clip-path:polygon(100%);
+    image-rendering: optimizeQuality;
+    background-position-x: center; */
+    background-color: var(--background2);
+    object-fit: contain;
+    width: 100%;
+    height: 250px;
+}
+
+.ad-info {
+    display: grid;
+    width: 100%;
+    max-height: 300px;
+    gap: 10px;
+    background-color: var(--background3);
+    border-radius: 0 0 10px 10px;
+    padding: 0 0 12px 0;
+}
+
+.ad-info h2 {
+    margin: 0;
+    white-space: wrap;
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ad-info h4 {
+    margin: 0 0 0 7px;
+    color: var(--secondary-color)
+}
+
+#up {
+    display: none;
+    cursor: pointer;
+    position: fixed;
+    background-color: var(--secondary-color);
+    border: 5px solid var(--background1);
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    right: 30px;
+    bottom: 35px;
+}
+
+#up img {
+    width: 40px;
+    height: 40px
+}
+
+#creator_mention {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap:5px;
+    font-size:18px;
+    font-family:'Times New Roman', Times, serif
+}
+
+@media screen and (max-width:600px){
+    .image-uploaded {
+        width: calc(100%);
+        object-fit: cover
+    }
+    .ad-ctn {
+        width: calc(100% - 40px);
+    }
+    .ad-ctn:hover{
+        transform: scale(1);
+    }
+}
